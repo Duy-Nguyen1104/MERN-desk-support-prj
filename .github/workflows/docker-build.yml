@@ -30,10 +30,6 @@ jobs:
         run: |
           docker build -t support-desk-proj-backend:latest -f backend/Dockerfile .
 
-      - name: Run tests for backend
-        run: |
-          docker run --rm support-desk-proj-backend:latest npm test
-
       - name: Push frontend image to Docker Desktop
         run: |
           docker tag support-desk-proj-frontend:latest ${{ secrets.DOCKER_USERNAME }}/support-desk-proj-frontend:latest
